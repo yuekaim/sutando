@@ -2,13 +2,19 @@ body {
     overflow-x: hidden;
     margin: 0px;
     font-family: monospace;
-    color: white;
+    color: black;
+    height: 5000px;
+    background: linear-gradient(white 0%, white 20%, red, 50%, red 60%, black 85%);
 }
 
 canvas {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: -100;
+    opacity: 1;
+    animation-name: canvas;
+    animation-duration: 3s;
 }
 
 main {
@@ -34,4 +40,56 @@ section {
     left: 10px;
     z-index: 99;
     font-size: 3vh;
+}
+
+#vwSrcLink {
+    position: fixed;
+    z-index: 99;
+}
+
+.title{
+  position: fixed;
+  filter: invert();
+  animation-name: title;
+  animation-duration: 5s;
+  transform: translate(-50%, -50%) scale(1);
+  top: 2em;
+  left: 50vw;
+}
+
+@keyframes title {
+  0% {
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+  20%{
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 1;
+  }
+  30%  {
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%) scale(3);
+  }
+  60%{
+    top: 2em;
+    /* left: 50vw; */
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes canvas{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
